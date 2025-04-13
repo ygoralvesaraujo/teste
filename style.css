@@ -1,38 +1,27 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: white;
-  color: #b30000;
+  margin: 0;
   padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  background-color: #fff;
+  color: #000;
 }
 
-h2, h3 {
-  color: #b30000;
+#login-container, #cadastro-container, #app-container {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 input, select, textarea, button {
-  display: block;
   width: 100%;
-  margin: 10px 0;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-button {
-  background-color: #b30000;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #990000;
+  padding: 10px;
+  font-size: 16px;
 }
 
 canvas {
-  background-color: #f9f9f9;
-  touch-action: none;
+  width: 100%;
+  height: auto;
+  border: 1px solid #000;
 }
-

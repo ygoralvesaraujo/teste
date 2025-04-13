@@ -5,6 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestor de Ocorrências</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #fff;
+      color: #000;
+    }
+
+    #login-container, #app-container {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    canvas {
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      background-color: #f00;
+      color: white;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #c00;
+    }
+
+    h2 {
+      color: #f00;
+    }
+  </style>
 </head>
 <body>
   <div id="login-container">
@@ -12,6 +54,17 @@
     <input type="text" id="username" placeholder="Usuário">
     <input type="password" id="password" placeholder="Senha">
     <button onclick="login()">Entrar</button>
+    <button onclick="mostrarCadastro()">Cadastrar</button>
+    <p id="login-msg" style="color:red"></p>
+  </div>
+
+  <div id="cadastro-container" style="display:none">
+    <h2>Cadastrar Usuário</h2>
+    <input type="text" id="new-username" placeholder="Novo Usuário">
+    <input type="password" id="new-password" placeholder="Nova Senha">
+    <button onclick="cadastrarUsuario()">Salvar Cadastro</button>
+    <button onclick="voltarLogin()">Voltar</button>
+    <p id="cadastro-msg" style="color:green"></p>
   </div>
 
   <div id="app-container" style="display:none">
@@ -25,7 +78,7 @@
     </select>
 
     <label>Data e Hora:</label>
-    <input type="datetime-local" id="dataHora">
+    <input type="datetime-local" id="dataHora" value="2025-04-13T10:00">
 
     <label>Operador:</label>
     <input type="text" id="operador" placeholder="Nome do Operador">
@@ -50,6 +103,9 @@
     <canvas id="assinaturaCanvas" width="300" height="100" style="border:1px solid #000"></canvas>
     <button onclick="limparAssinatura()">Limpar Assinatura</button>
 
+    <label>Assinatura do Fiscal:</label>
+    <p id="fiscal-assinatura"></p>
+
     <button onclick="salvarOcorrencia()">Salvar</button>
 
     <h3>Ocorrências Salvas</h3>
@@ -62,5 +118,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
