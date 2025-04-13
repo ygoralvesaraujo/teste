@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Ocorrências</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Relatório de Ocorrências</h1>
+
+    <!-- Formulário para dados da ocorrência -->
+    <form id="form">
+      <label for="tipo">Tipo de Ocorrência:</label>
+      <select id="tipo">
+        <option value="Exclusão">Exclusão</option>
+        <option value="Alteração">Alteração</option>
+        <option value="Desistência">Desistência</option>
+        <option value="Cancelamento">Cancelamento</option>
+      </select>
+
+      <label for="data">Data:</label>
+      <input type="text" id="data" value="" readonly>
+      
+      <label for="hora">Hora:</label>
+      <input type="text" id="hora" value="" readonly>
+
+      <label for="operador">Operador:</label>
+      <input type="text" id="operador" value="Operador Exemplo" readonly>
+
+      <label for="motivo">Motivo:</label>
+      <input type="text" id="motivo">
+
+      <label for="assinatura">Assinatura do Operador:</label>
+      <canvas id="assinatura" class="signature-canvas"></canvas>
+
+      <label for="foto">Tire uma foto (apenas para Alteração):</label>
+      <input type="file" id="foto" accept="image/*" style="display: none;" />
+
+      <div class="btn-container">
+        <button type="button" onclick="salvarOcorrencia()">Salvar Ocorrência</button>
+        <button type="button" onclick="baixarRelatorio()">Baixar Relatório</button>
+        <button type="button" onclick="compartilharRelatorio()">Compartilhar Relatório</button>
+      </div>
+    </form>
+
+    <h2>Ocorrências Registradas</h2>
+    <div id="ocorrencias-lista"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
