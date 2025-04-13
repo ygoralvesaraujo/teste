@@ -1,11 +1,13 @@
+/* Estilos principais */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   background-color: #fff;
   color: #000;
 }
 
+/* Login e Cadastro */
 #login-container, #cadastro-container, #app-container {
   max-width: 400px;
   margin: auto;
@@ -14,14 +16,37 @@ body {
   gap: 10px;
 }
 
+/* Inputs e botões */
 input, select, textarea, button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
+/* Canvas da assinatura */
 canvas {
   width: 100%;
   height: auto;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
+}
+
+/* Tamanho do botão */
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #login-container, #cadastro-container, #app-container {
+    padding: 10px;
+  }
 }
